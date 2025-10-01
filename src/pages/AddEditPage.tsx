@@ -47,7 +47,7 @@ const validationSchema = Yup.object({
   status: Yup.string().oneOf(["active", "inactive"]).required("Status is required"),
   gender: Yup.string().oneOf(["male", "female"]).required("Gender is required"),
   location: Yup.string(),
-  profile: Yup.string().url("Must be a valid URL"),
+  profile: Yup.string().url("Must be a valid URL").nullable().transform((value) => value === '' ? null : value),
 })
 
 const AddEditPage = () => {
@@ -79,11 +79,24 @@ const AddEditPage = () => {
 
   const handleSubmit = async (values: Partial<User>) => {
     try {
+      // Clean the values - remove empty strings and replace with undefined
+      const cleanedValues = Object.fromEntries(
+        Object.entries(values).map(([key, value]) => [
+          key,
+          typeof value === 'string' && value.trim() === '' ? undefined : value
+        ])
+      )
+      
+      // Remove undefined values to avoid sending empty fields
+      const finalValues = Object.fromEntries(
+        Object.entries(cleanedValues).filter(([_, value]) => value !== undefined)
+      )
+
       if (isEdit) {
-        await updateUser(id!, values)
+        await updateUser(id!, finalValues)
         toast.success("User updated successfully")
       } else {
-        await createUser(values)
+        await createUser(finalValues)
         toast.success("User added successfully")
       }
       navigate("/")

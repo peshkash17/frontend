@@ -1,16 +1,16 @@
 import { type VariantProps, cva } from "class-variance-authority"
 
-// Glass morphism card variants with enhanced effects
+// Glass morphism card variants with Supabase-inspired effects
 export const glassCardVariants = cva(
   "backdrop-blur-xl border shadow-2xl transition-all duration-500 relative overflow-hidden",
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-br from-white/[0.08] to-white/[0.03] border-white/[0.15] hover:from-white/[0.12] hover:to-white/[0.06] hover:border-white/[0.25] hover:shadow-cyan-500/20",
-        strong: "bg-gradient-to-br from-white/[0.15] to-white/[0.08] border-white/[0.25] hover:from-white/[0.20] hover:to-white/[0.12] hover:border-white/[0.35] hover:shadow-cyan-500/30",
-        subtle: "bg-gradient-to-br from-white/[0.04] to-white/[0.01] border-white/[0.08] hover:from-white/[0.08] hover:to-white/[0.03] hover:border-white/[0.15] hover:shadow-cyan-500/10",
-        interactive: "bg-gradient-to-br from-white/[0.10] to-white/[0.05] border-white/[0.20] hover:from-white/[0.16] hover:to-white/[0.08] hover:border-white/[0.30] hover:scale-[1.02] hover:shadow-cyan-500/25 cursor-pointer",
-        premium: "bg-gradient-to-br from-cyan-500/[0.15] via-purple-500/[0.10] to-blue-500/[0.15] border-cyan-400/[0.30] hover:from-cyan-400/[0.20] hover:via-purple-400/[0.15] hover:to-blue-400/[0.20] hover:border-cyan-300/[0.40] hover:shadow-cyan-400/40",
+        default: "bg-gradient-to-br from-card/90 to-card/70 border-border hover:from-card/95 hover:to-card/80 hover:border-primary/30 hover:shadow-primary/10",
+        strong: "bg-gradient-to-br from-card/95 to-card/85 border-border hover:from-card/100 hover:to-card/90 hover:border-primary/40 hover:shadow-primary/20",
+        subtle: "bg-gradient-to-br from-card/70 to-card/50 border-border/50 hover:from-card/80 hover:to-card/60 hover:border-primary/20 hover:shadow-primary/5",
+        interactive: "bg-gradient-to-br from-card/85 to-card/75 border-border hover:from-card/95 hover:to-card/85 hover:border-primary/50 hover:scale-[1.02] hover:shadow-primary/15 cursor-pointer",
+        premium: "bg-gradient-to-br from-primary/15 via-card/85 to-primary/10 border-primary/30 hover:from-primary/20 hover:via-card/90 hover:to-primary/15 hover:border-primary/50 hover:shadow-primary/25",
       },
       size: {
         sm: "p-4 rounded-xl",
@@ -26,19 +26,19 @@ export const glassCardVariants = cva(
   }
 )
 
-// Glass button variants with enhanced effects
+// Glass button variants with Supabase-inspired effects
 export const glassButtonVariants = cva(
   "inline-flex items-center justify-center font-medium transition-all duration-500 backdrop-blur-lg border relative overflow-hidden group",
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-cyan-500/20 via-cyan-400/15 to-cyan-500/20 border-cyan-400/40 text-cyan-100 hover:from-cyan-400/30 hover:via-cyan-300/25 hover:to-cyan-400/30 hover:border-cyan-300/60 hover:text-white hover:shadow-lg hover:shadow-cyan-500/25 rounded-xl",
-        secondary: "bg-gradient-to-r from-white/10 via-white/5 to-white/10 border-white/25 text-white/90 hover:from-white/20 hover:via-white/15 hover:to-white/20 hover:border-white/40 hover:text-white hover:shadow-lg hover:shadow-white/10 rounded-xl",
-        destructive: "bg-gradient-to-r from-red-500/20 via-red-400/15 to-red-500/20 border-red-400/40 text-red-200 hover:from-red-400/30 hover:via-red-300/25 hover:to-red-400/30 hover:border-red-300/60 hover:text-white hover:shadow-lg hover:shadow-red-500/25 rounded-xl",
-        success: "bg-gradient-to-r from-emerald-500/20 via-emerald-400/15 to-emerald-500/20 border-emerald-400/40 text-emerald-200 hover:from-emerald-400/30 hover:via-emerald-300/25 hover:to-emerald-400/30 hover:border-emerald-300/60 hover:text-white hover:shadow-lg hover:shadow-emerald-500/25 rounded-xl",
-        ghost: "border-transparent text-white/70 hover:bg-gradient-to-r hover:from-white/10 hover:to-white/5 hover:text-white hover:border-white/20 rounded-xl",
-        outline: "border-white/30 text-white bg-transparent hover:bg-gradient-to-r hover:from-white/10 hover:to-white/5 hover:border-white/50 rounded-xl",
-        premium: "bg-gradient-to-r from-purple-500/20 via-pink-500/15 to-cyan-500/20 border-purple-400/40 text-white hover:from-purple-400/30 hover:via-pink-400/25 hover:to-cyan-400/30 hover:border-purple-300/60 hover:shadow-lg hover:shadow-purple-500/30 rounded-xl",
+        default: "bg-gradient-to-r from-primary/20 via-primary/15 to-primary/20 border-primary/40 text-primary-foreground hover:from-primary/30 hover:via-primary/25 hover:to-primary/30 hover:border-primary/60 hover:text-background hover:shadow-lg hover:shadow-primary/25 rounded-xl",
+        secondary: "bg-gradient-to-r from-secondary/80 via-secondary/60 to-secondary/80 border-border text-secondary-foreground hover:from-secondary/90 hover:via-secondary/70 hover:to-secondary/90 hover:border-primary/40 hover:text-foreground hover:shadow-lg hover:shadow-secondary/10 rounded-xl",
+        destructive: "bg-gradient-to-r from-destructive/20 via-destructive/15 to-destructive/20 border-destructive/40 text-destructive-foreground hover:from-destructive/30 hover:via-destructive/25 hover:to-destructive/30 hover:border-destructive/60 hover:text-white hover:shadow-lg hover:shadow-destructive/25 rounded-xl",
+        success: "bg-gradient-to-r from-primary/20 via-primary/15 to-primary/20 border-primary/40 text-primary hover:from-primary/30 hover:via-primary/25 hover:to-primary/30 hover:border-primary/60 hover:text-background hover:shadow-lg hover:shadow-primary/25 rounded-xl",
+        ghost: "border-transparent text-foreground/70 hover:bg-gradient-to-r hover:from-secondary/50 hover:to-secondary/30 hover:text-foreground hover:border-border rounded-xl",
+        outline: "border-border text-foreground bg-transparent hover:bg-gradient-to-r hover:from-secondary/50 hover:to-secondary/30 hover:border-primary/50 rounded-xl",
+        premium: "bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 border-primary/50 text-primary-foreground hover:from-primary/40 hover:via-primary/30 hover:to-primary/40 hover:border-primary/70 hover:shadow-lg hover:shadow-primary/30 rounded-xl",
       },
       size: {
         sm: "h-9 px-4 text-sm",
@@ -54,15 +54,15 @@ export const glassButtonVariants = cva(
   }
 )
 
-// Glass input variants
+// Glass input variants with Supabase theme
 export const glassInputVariants = cva(
-  "flex w-full rounded-xl border bg-black px-3 py-2 text-sm transition-all duration-300 backdrop-blur-md placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:cursor-not-allowed disabled:opacity-50",
+  "flex w-full rounded-xl border bg-input px-3 py-2 text-sm transition-all duration-300 backdrop-blur-md placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "border-white/20  bg-black  text-white hover:border-white/30 focus:border-primary/50",
-        strong: "border-white/30 bg-black  text-white",
-        subtle: "border-white/10  bg-black text-white/90",
+        default: "border-border bg-input text-foreground hover:border-primary/30 focus:border-primary/50",
+        strong: "border-border bg-input text-foreground",
+        subtle: "border-border/50 bg-input/50 text-foreground/90",
       },
     },
     defaultVariants: {
@@ -71,19 +71,19 @@ export const glassInputVariants = cva(
   }
 )
 
-// Glass badge variants with enhanced styling
+// Glass badge variants with Supabase-inspired styling
 export const glassBadgeVariants = cva(
   "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium transition-all duration-500 backdrop-blur-lg border relative overflow-hidden",
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-cyan-500/25 to-cyan-400/20 border-cyan-400/50 text-cyan-100 shadow-lg shadow-cyan-500/20",
-        secondary: "bg-gradient-to-r from-white/20 to-white/15 border-white/40 text-white shadow-lg shadow-white/10",
-        destructive: "bg-gradient-to-r from-red-500/25 to-red-400/20 border-red-400/50 text-red-200 shadow-lg shadow-red-500/20",
-        success: "bg-gradient-to-r from-emerald-500/25 to-emerald-400/20 border-emerald-400/50 text-emerald-200 shadow-lg shadow-emerald-500/20",
-        warning: "bg-gradient-to-r from-amber-500/25 to-amber-400/20 border-amber-400/50 text-amber-200 shadow-lg shadow-amber-500/20",
-        outline: "border-white/40 text-white bg-white/5 hover:bg-white/10",
-        premium: "bg-gradient-to-r from-purple-500/25 via-pink-500/20 to-cyan-500/25 border-purple-400/50 text-white shadow-lg shadow-purple-500/25",
+        default: "bg-gradient-to-r from-primary/25 to-primary/20 border-primary/50 text-primary shadow-lg shadow-primary/20",
+        secondary: "bg-gradient-to-r from-secondary/80 to-secondary/60 border-border text-secondary-foreground shadow-lg shadow-secondary/10",
+        destructive: "bg-gradient-to-r from-destructive/25 to-destructive/20 border-destructive/50 text-destructive shadow-lg shadow-destructive/20",
+        success: "bg-gradient-to-r from-primary/25 to-primary/20 border-primary/50 text-primary shadow-lg shadow-primary/20",
+        warning: "bg-gradient-to-r from-yellow-500/25 to-yellow-400/20 border-yellow-400/50 text-yellow-400 shadow-lg shadow-yellow-500/20",
+        outline: "border-border text-foreground bg-background/50 hover:bg-background/70",
+        premium: "bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 border-primary/60 text-primary-foreground shadow-lg shadow-primary/25",
       },
     },
     defaultVariants: {

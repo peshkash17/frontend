@@ -244,7 +244,7 @@ const ListingPage = () => {
                   <div className="hidden md:block overflow-x-auto">
                     <Table>
                       <TableHeader>
-                        <TableRow className="border-white/20 hover:bg-transparent">
+                        <TableRow className="border-white/20 hover:bg-black">
                           <TableHead className="text-muted-foreground font-semibold">Profile</TableHead>
                           <TableHead className="text-muted-foreground font-semibold">Name</TableHead>
                           <TableHead className="text-muted-foreground font-semibold">Email</TableHead>
@@ -264,7 +264,7 @@ const ListingPage = () => {
                             variants={tableRowVariants}
                             initial="hidden"
                             animate="visible"
-                            className="border-white/20 hover:bg-white/30 transition-colors duration-200 group"
+                            className="hover:bg-black/20 transition-colors duration-200 group "
                           >
                             <TableCell>
                               {user.profile ? (
@@ -294,11 +294,7 @@ const ListingPage = () => {
                             <TableCell>
                               <Badge
                                 variant={user.status === "active" ? "default" : "secondary"}
-                                className={
-                                  user.status === "active"
-                                    ? "bg-primary/20 text-primary border-primary/30 hover:bg-primary/30 backdrop-blur-sm"
-                                    : "bg-white/40 text-muted-foreground border-white/40 backdrop-blur-sm"
-                                }
+                               className="cursor-pointer hover:bg-muted/10 transition-colors duration-200"
                               >
                                 {user.status}
                               </Badge>
@@ -313,9 +309,9 @@ const ListingPage = () => {
                                 <Link to={`/view/${user._id}`}>
                                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                     <Button
-                                      variant="ghost"
+                                      variant="default"
                                       size="sm"
-                                      className="gap-1.5 hover:bg-primary/10 hover:text-primary transition-all duration-200"
+                                      className="cursor-pointer"
                                     >
                                       <Eye className="w-4 h-4" />
                                       <span className="hidden xl:inline">View</span>
@@ -325,9 +321,9 @@ const ListingPage = () => {
                                 <Link to={`/edit/${user._id}`}>
                                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                     <Button
-                                      variant="ghost"
+                                      variant="secondary"
                                       size="sm"
-                                      className="gap-1.5 hover:bg-primary/10 hover:text-primary transition-all duration-200"
+                                      className=""
                                     >
                                       <Pencil className="w-4 h-4" />
                                       <span className="hidden xl:inline">Edit</span>
@@ -336,10 +332,10 @@ const ListingPage = () => {
                                 </Link>
                                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                   <Button
-                                    variant="ghost"
+                                    variant="outline"
                                     size="sm"
                                     onClick={() => handleDelete(user._id)}
-                                    className="gap-1.5 hover:bg-destructive/10 hover:text-destructive transition-all duration-200"
+                                    className="gap-1.5 hover:bg-destructive/10 hover:text-destructive transition-all duration-200 cursor-pointer"
                                   >
                                     <Trash2 className="w-4 h-4" />
                                     <span className="hidden xl:inline">Delete</span>
@@ -391,11 +387,7 @@ const ListingPage = () => {
                             <div className="flex items-center gap-2 mt-2">
                               <Badge
                                 variant={user.status === "active" ? "default" : "secondary"}
-                                className={
-                                  user.status === "active"
-                                    ? "bg-primary/20 text-primary border-primary/30 backdrop-blur-sm"
-                                    : "bg-white/40 text-muted-foreground border-white/40 backdrop-blur-sm"
-                                }
+                               
                               >
                                 {user.status}
                               </Badge>
@@ -407,9 +399,9 @@ const ListingPage = () => {
                           <Link to={`/view/${user._id}`} className="w-full">
                             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                               <Button
-                                variant="outline"
+                                variant="default"
                                 size="sm"
-                                className="w-full gap-1.5 hover:bg-primary/10 hover:border-primary transition-all duration-200 bg-white/30 backdrop-blur-sm"
+                                className="w-full gap-1.5 hover:bg-primary/10 hover:border-primary transition-all duration-200 "
                               >
                                 <Eye className="w-4 h-4" />
                                 View
@@ -419,9 +411,9 @@ const ListingPage = () => {
                           <Link to={`/edit/${user._id}`} className="w-full">
                             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                               <Button
-                                variant="outline"
+                                variant="secondary"
                                 size="sm"
-                                className="w-full gap-1.5 hover:bg-primary/10 hover:border-primary transition-all duration-200 bg-white/30 backdrop-blur-sm"
+                                className="w-full gap-1.5 hover:bg-primary/10 hover:border-primary transition-all duration-200  backdrop-blur-sm"
                               >
                                 <Pencil className="w-4 h-4" />
                                 Edit
@@ -433,7 +425,7 @@ const ListingPage = () => {
                               variant="outline"
                               size="sm"
                               onClick={() => handleDelete(user._id)}
-                              className="w-full gap-1.5 hover:bg-destructive/10 hover:border-destructive hover:text-destructive transition-all duration-200 bg-white/30 backdrop-blur-sm"
+                              className="w-full gap-1.5 hover:bg-destructive/10 hover:border-destructive hover:text-destructive transition-all duration-200  backdrop-blur-sm"
                             >
                               <Trash2 className="w-4 h-4" />
                               Delete

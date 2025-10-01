@@ -71,7 +71,7 @@ export const GlassCardTitle = React.forwardRef<HTMLHeadingElement, GlassCardTitl
     return (
       <h3
         ref={ref}
-        className={cn('font-semibold leading-none tracking-tight text-white', className)}
+        className={cn('font-semibold leading-none tracking-tight text-foreground', className)}
         {...props}
       >
         {children}
@@ -91,7 +91,7 @@ export const GlassCardDescription = React.forwardRef<HTMLParagraphElement, Glass
     return (
       <p
         ref={ref}
-        className={cn('text-sm text-white/70', className)}
+        className={cn('text-sm text-muted-foreground', className)}
         {...props}
       >
         {children}

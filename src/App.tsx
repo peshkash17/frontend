@@ -9,7 +9,7 @@ import ViewPage from "./pages/ViewPage"
 function App() {
   return (
     <Router>
-      <div className="min-h-screen w-full bg-background">
+      <div className="dark min-h-screen w-full" style={{backgroundColor: '#000000', color: '#f1f3f4'}}>
         <div className="container mx-auto w-full px-4">
           <Routes>
             <Route path="/" element={<ListingPage />} />

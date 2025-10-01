@@ -4,7 +4,7 @@ import type { User, ApiResponse } from '../types/user';
 
 
 const api = axios.create({
-  baseURL: import.meta.env.API_BASE_URL,
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api',
 });
 
 api.interceptors.response.use(
